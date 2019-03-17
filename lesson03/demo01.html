@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 当数据改变时，插值处的内容不会更新 -->
+        <span v-once>这个将不会改变: {{ msg }}</span>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                msg: 'hello'
+            }
+        })
+    </script>
+</body>
+
+</html>
