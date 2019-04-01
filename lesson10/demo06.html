@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+    <div id="blog-post-demo">
+        <alert-box>
+            <div>dlskflkfdj</div>
+            <h1>发开发进度款浪费</h1>
+        </alert-box>
+    </div>
+    <script>
+        Vue.component('alert-box', {
+            template: `
+                    <div class="demo-alert-box">
+                    <strong>Error!</strong>
+                    <slot></slot>
+                    </div>
+                `
+        })
+        new Vue({
+            el: '#blog-post-demo',
+        })
+    </script>
+</body>
+
+</html>

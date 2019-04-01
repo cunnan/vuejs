@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <ul id="v-for-object" class="demo">
+        <div v-for="(value,key,index) in userProfile" :key="index">
+            {{key}}--{{value}}
+        </div>
+
+    </ul>
+    <script>
+        var vm = new Vue({
+            el: '#v-for-object',
+            data: {
+                userProfile: {
+                    name: 'Anika'
+                }
+            },
+
+        })
+        vm.userProfile = Object.assign({}, vm.userProfile, {
+            age: 27,
+            favoriteColor: 'Vue Green'
+        })
+    </script>
+</body>
+
+</html>

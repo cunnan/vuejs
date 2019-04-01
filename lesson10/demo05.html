@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+    <div id="blog-post-demo">
+        <custom-input v-model="searchText" @input="a"></custom-input>
+    </div>
+    <script>
+        Vue.component('custom-input', {
+            props: ['value'],
+            template: `
+                <input
+                v-bind:value="value"
+                v-on:input="$emit('input', $event.target.value)"
+                >
+            `
+        })
+        new Vue({
+            el: '#blog-post-demo',
+            data(){
+                return {
+                    searchText:''
+
+                }
+            },
+            methods: {
+                a(){
+                    console.log(this.searchText)
+                }
+            },
+
+        })
+    </script>
+</body>
+
+</html>
